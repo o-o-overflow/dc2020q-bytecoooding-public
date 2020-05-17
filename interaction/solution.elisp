@@ -1,0 +1,52 @@
+(setq solution
+   (unibyte-string
+	(+ byte-constant 27)
+	(+ byte-constant 26)
+	(+ byte-constant 5)
+	(+ byte-constant 11)
+	(+ byte-constant 0)
+	(+ byte-constant 6)
+	(+ byte-call 4)
+	(+ byte-call 1)
+	byte-discard
+	(+ byte-constant 28)
+	(+ byte-constant 29)
+	byte-call
+	(+ byte-call 1)
+	byte-return))
+"\333\332\305\313\300\306$!\210\334\335 !\207"
+
+"\xdb\xda\xc5\xcb\xc0\xc6\x24\x21\x88\xdc\xdd\x20\x21\x87"
+"\333\332\305\313\300\306$!\210\334\335 !\207"
+
+
+(defalias 'custom-steal
+  (make-byte-code
+   nil
+   solution
+   [97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 string insert-file-contents print buffer-string]
+   20))
+custom-steal
+
+custom-steal
+
+(disassemble 'custom-steal)
+nil
+
+nil
+
+
+
+(progn (defalias 'custom-steal
+  (make-byte-code
+   nil
+   solution
+   [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, string, insert-file-contents, print, buffer-string]
+   20))
+	   (custom-steal))
+
+custom-steal
+
+(disassemble custom-steal)
+
+

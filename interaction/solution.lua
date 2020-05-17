@@ -1,0 +1,1 @@
+print(io.open("flag", "r")read("*all"))
